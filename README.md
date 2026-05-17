@@ -1,108 +1,119 @@
 #  Hospital Portal – AWS Cloud Architecture Project
 
-A scalable hospital web system built on AWS demonstrating cloud fundamentals including compute, auto scaling, load balancing, monitoring, and NoSQL database design.
+A scalable hospital web application built on AWS demonstrating real-world cloud engineering concepts including compute, auto scaling, load balancing, monitoring, and database integration.
 
 ---
 
 ##  Project Overview
 
-This project simulates a **hospital patient management system** deployed on AWS. It is designed to handle variable traffic (500K+ users conceptually) using cloud-native services for scalability, reliability, and monitoring.
+This project simulates a hospital patient portal designed to handle high traffic using AWS cloud services. The system is fully scalable, monitored, and designed with high availability principles.
 
-The system automatically scales based on demand, routes traffic efficiently, and stores patient data securely in a managed NoSQL database.
+The application is deployed using EC2 instances that automatically scale based on demand and are distributed via a load balancer. Patient data is stored in a managed NoSQL database.
 
 ---
 
-## Architecture Components
+##  AWS Architecture
 
-- **Compute Layer:** Amazon EC2
-- **Auto Scaling:** EC2 Auto Scaling Group
-- **Load Balancing:** Application Load Balancer (ALB)
-- **Database:** Amazon DynamoDB
-- **Monitoring:** Amazon CloudWatch
-- **Storage (EC2 root volume):** EBS gp3
+User → Application Load Balancer → EC2 Instances → index.html
+↓
+DynamoDB
+↓
+CloudWatch
+↓
+Auto Scaling Group
+
 
 ---
 
 ##  AWS Services Used
 
 - :contentReference[oaicite:0]{index=0} – Hosts the hospital web application  
-- :contentReference[oaicite:1]{index=1} – Automatically scales instances based on CPU load  
+- :contentReference[oaicite:1]{index=1} – Automatically scales EC2 instances based on CPU usage  
 - :contentReference[oaicite:2]{index=2} – Distributes traffic across multiple EC2 instances  
 - :contentReference[oaicite:3]{index=3} – Stores patient records and hospital data  
-- :contentReference[oaicite:4]{index=4} – Monitors CPU, network, and system performance  
+- :contentReference[oaicite:4]{index=4} – Monitors CPU usage, system health, and triggers alarms  
 
 ---
 
-## Key Features
+## Project Files
 
-- Auto-scaling EC2 instances based on CPU utilization
-- Load-balanced traffic across multiple availability zones
-- Real-time monitoring using CloudWatch metrics and alarms
-- Serverless-style database using DynamoDB
-- Manual data entry for hospital patient records
-- Fault-tolerant and highly available architecture
+- `index.html` → Simple hospital portal frontend UI  
+- `user-data.sh` → EC2 bootstrap script that installs and configures web server automatically  
+- `README.md` → Project documentation  
 
 ---
 
-## Sample Data (DynamoDB)
+##  Deployment Flow
+
+1. EC2 instance launches using a Launch Template  
+2. `user-data.sh` automatically installs and configures web server  
+3. Application Load Balancer distributes traffic across instances  
+4. Auto Scaling Group adjusts capacity based on CPU load  
+5. CloudWatch monitors system performance and triggers alarms  
+6. DynamoDB stores patient data securely  
+
+---
+
+##  Sample DynamoDB Data
 
 ### Patients Table
+
 | PatientID | Name       | Age | Condition |
-|-----------|------------|-----|----------|
-| 1         | Fatimo Y   | 21  | Fever    |
-| 2         | Tomson P   | 76  | Cold     |
-| 3         | Racheal    | 19  | Headache |
+|----------|------------|-----|----------|
+| 1        | Fatimo Y   | 21  | Fever    |
+| 2        | Tomson P   | 76  | Cold     |
+| 3        | Racheal    | 19  | Headache |
 
 ---
 
-## System Flow
+##  Key Features
 
-User → ALB → EC2 → DynamoDB
-↓
-CloudWatch
-↓
-Auto Scaling
-
-
+- Auto-scaling infrastructure based on demand
+- Load-balanced traffic across multiple availability zones
+- Real-time monitoring using CloudWatch
+- Serverless NoSQL database (DynamoDB)
+- Automated EC2 setup using user-data script
+- Simple hospital UI (HTML-based)
 
 ---
 
 ##  What I Learned
 
-- How cloud auto scaling reacts to CPU demand
-- How load balancers distribute traffic across instances
-- How DynamoDB stores structured hospital data without servers
-- How CloudWatch monitors system health and triggers alerts
-- How EC2 integrates with IAM roles and AWS services
+- Designing scalable AWS architectures
+- Configuring EC2 Auto Scaling Groups
+- Using Application Load Balancers effectively
+- Working with DynamoDB as a NoSQL database
+- Monitoring infrastructure using CloudWatch
+- Automating EC2 setup using user-data scripts
 
 ---
 
 ##  Project Goal
 
 To build a real-world cloud architecture simulating a hospital system that is:
-- Scalable
 - Highly available
-- Monitored in real-time
-- Secure and distributed
+- Auto scalable
+- Monitored in real time
+- Cloud-native and serverless where possible
 
 ---
 
-## Future Improvements
+##  Future Improvements
 
 - Add backend API (Node.js / Python Flask)
-- Add authentication system for patients and doctors
-- Add frontend dashboard UI
-- Connect real-time health data streams
-- Add encryption for DynamoDB
+- Add authentication system for users and doctors
+- Replace static HTML with dynamic frontend (React)
+- Add encryption for DynamoDB tables
+- Implement CI/CD pipeline
 
 ---
 
 ##  Author
 
-Built as a hands-on AWS cloud engineering learning project.
+Built as a hands-on AWS cloud engineering project to demonstrate real-world infrastructure skills.
 
 ---
 
 ##  Status
 
-✔ Completed – Core cloud architecture deployed and tested
+✔ Completed – Fully functional AWS cloud architecture deployed and tested
