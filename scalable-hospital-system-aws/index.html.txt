@@ -1,0 +1,10 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Hospital Portal</title>
+</head>
+<body>
+  <h1>Hospital Portal Running on AWS</h1>
+  <p>Cloud Architecture Project</p>
+</body>
+</html>

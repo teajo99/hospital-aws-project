@@ -1,0 +1,18 @@
+#!/bin/bash
+yum update -y
+yum install nginx -y
+systemctl start nginx
+systemctl enable nginx
+
+cat <<EOF > /usr/share/nginx/html/index.html
+<!DOCTYPE html>
+<html>
+<head>
+<title>Hospital Portal</title>
+</head>
+<body>
+<h1>Hospital Portal Running on AWS</h1>
+<p>Cloud Architecture Project</p>
+</body>
+</html>
+EOF
