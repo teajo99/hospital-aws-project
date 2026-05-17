@@ -1,3 +1,6 @@
+Architecture Diagram
+![image alt](https://github.com/teajo99/hospital-aws-project/blob/9c2318bf0e383dc1543c81738b50ca998144698d/scalable-hospital-system-aws/Architecture%20Diagram.png)
+
 #  Hospital Portal – AWS Cloud Architecture Project
 
 A scalable hospital web application built on AWS demonstrating real-world cloud engineering concepts including compute, auto scaling, load balancing, monitoring, and database integration.
