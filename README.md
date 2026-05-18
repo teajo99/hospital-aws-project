@@ -30,11 +30,11 @@ Auto Scaling Group
 
 ##  AWS Services Used
 
-- :contentReference[oaicite:0]{index=0} – Hosts the hospital web application  
-- :contentReference[oaicite:1]{index=1} – Automatically scales EC2 instances based on CPU usage  
-- :contentReference[oaicite:2]{index=2} – Distributes traffic across multiple EC2 instances  
-- :contentReference[oaicite:3]{index=3} – Stores patient records and hospital data  
-- :contentReference[oaicite:4]{index=4} – Monitors CPU usage, system health, and triggers alarms  
+- Hosts the hospital web application  
+- Automatically scales EC2 instances based on CPU usage  
+- Distributes traffic across multiple EC2 instances  
+- Stores patient records and hospital data  
+– Monitors CPU usage, system health, and triggers alarms  
 
 ---
 
